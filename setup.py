@@ -12,7 +12,7 @@ from setuptools import setup
 
 
 # XXX Deduplicate this
-__version__ = '0.15.1'
+__version__ = '0.15.1-fork'
 
 setup(name='pyOpenSSL', version=__version__,
       packages = ['OpenSSL'],
