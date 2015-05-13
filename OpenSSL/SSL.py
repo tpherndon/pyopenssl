@@ -1233,8 +1233,10 @@ class Connection(object):
         elif b"\0" in name:
             raise TypeError("name must not contain NUL byte")
 
-        # XXX I guess this can fail sometimes?
-        _lib.SSL_set_tlsext_host_name(self._ssl, name)
+        try:
+            _lib.SSL_set_tlsext_host_name(self._ssl, name)
+        except AttributeError:
+            pass
 
 
     def pending(self):
